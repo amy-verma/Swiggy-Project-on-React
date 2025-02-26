@@ -14,6 +14,9 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  //whenever state variable chnges react triggers a reconciliation cycle(re-renders the component)
+  console.log("Body Rendered")
+
   const RestaurantCardPromoted = withPromiseLabel(RestaurantCard);
 
   const onlineStatus = useOnlineStatus();
@@ -52,9 +55,10 @@ const Body = () => {
             className="px-4 py-1 bg-green-300 round rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfResataurant.filter((re) => {
-                re.info.name.toLowerCase().includes(searchText.toLowerCase());
+             return re.info.name.toLowerCase().includes(searchText.toLowerCase());
               });
-              setFilteredRestaurant(filteredRestaurant);
+              setListOfRestaurant(filteredRestaurant);
+              //  console.log(searchText)
             }}
           >
             Search
