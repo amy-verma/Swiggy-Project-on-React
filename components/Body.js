@@ -41,10 +41,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="m-0 p-0 w-full">
-      <div className="filter flex ">
-        <div className="search m-4 p-4">
+      <div className="flex flex-col md:flex-row md:justify-between items-center p-4 gap-4 ">
+        <div className="flex flex-col md:flex-row items-center gap-2">
           <input
-            className="border border-solid border-black mx-1"
+            className="border border-black px-4 py-2 w-full md:w-auto rounded-md"
             type="text"
             value={searchText}
             onChange={(e) => {
@@ -52,7 +52,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="px-4 py-1 bg-green-300 round rounded-lg"
+            className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
             onClick={() => {
               const filteredRestaurant = resList.filter((re) => {
              return re.info.name.toLowerCase().includes(searchText.toLowerCase());
@@ -66,7 +66,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-1 bg-gray-100 rounded-lg"
+            className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition"
             onClick={() => {
               const filterLogic = listOfResataurant.filter((res) => {
                 return res.info.avgRating > 4;
@@ -79,10 +79,10 @@ const Body = () => {
             Top Rated Restaurant
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
-          <label>User name: </label>
+        <div className="flex flex-col md:flex-row items-center gap-2">
+          <label className="text-gray-700 font-semibold">User name: </label>
           <input
-            className="border border-black p-2"
+            className="border border-gray-400 px-4 py-2 rounded-md"
             value={logggedInUser}
             onChange={(e) => {
               setUserName(e.target.value);
@@ -90,7 +90,7 @@ const Body = () => {
           ></input>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
