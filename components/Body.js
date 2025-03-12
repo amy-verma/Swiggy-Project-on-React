@@ -54,10 +54,10 @@ const Body = () => {
           <button
             className="px-4 py-1 bg-green-300 round rounded-lg"
             onClick={() => {
-              const filteredRestaurant = listOfResataurant.filter((re) => {
+              const filteredRestaurant = resList.filter((re) => {
              return re.info.name.toLowerCase().includes(searchText.toLowerCase());
               });
-              setListOfRestaurant(filteredRestaurant);
+              setFilteredRestaurant(filteredRestaurant);
               //  console.log(searchText)
             }}
           >
@@ -72,7 +72,8 @@ const Body = () => {
                 return res.info.avgRating > 4;
               });
               setListOfRestaurant(filterLogic);
-              console.log(filterLogic);
+              setFilteredRestaurant(filterLogic)
+              // console.log(filterLogic);
             }}
           >
             Top Rated Restaurant
@@ -90,7 +91,7 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {listOfResataurant.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}

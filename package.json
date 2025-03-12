@@ -1,7 +1,6 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -29,6 +28,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
+    "@swc/helpers": "^0.5.15",
+    "firebase": "^11.4.0",
     "glob": "^11.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -36,6 +37,6 @@
     "react-router-dom": "^6.28.1"
   },
   "browserslist": [
-  "last 2 versions"
+    "last 2 versions"
   ]
 }
