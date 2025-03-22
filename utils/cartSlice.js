@@ -18,7 +18,7 @@ const cartSlice=createSlice({
             return {items:[]};
         },
     },
-});
+}); 
 
 //Extracting action and reducer from the slice
 export const {addItem,removeItem,clearCart} =cartSlice.actions;

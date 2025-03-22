@@ -25,7 +25,7 @@ componentDidMount(){
             <userContext.Consumer>
             {({logggedInUser})=><h1 className="text-xl font-bold">{logggedInUser}</h1>}
             </userContext.Consumer>
-            <User name={"Amit (function)"}/>
+            <User name={"Amit"}/>
             <UserClass name={"Amit (class)"} location={"Bangaluru (class)"}/>
            
         </div>
